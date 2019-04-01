@@ -1,12 +1,5 @@
-//
-//  CorpusParser.swift
-//  MarkovChain
-//
-//  Created by Diana Komolova on 19/10/2017.
-//  Copyright © 2017 Diana Komolova. All rights reserved.
-//
-
 import Foundation
+
 enum ParseError: String, Error {
     case invalidPath = "invalid path"
 }
@@ -24,7 +17,7 @@ class CorpusParser {
     }
     
     private func path(to fileName: String) throws -> String {
-        if let path = Bundle.main.path(forResource: fileName, ofType: "rtf"){
+        if let path = Bundle.main.path(forResource: fileName, ofType: "txt") {
             return path
         }
         throw ParseError.invalidPath
